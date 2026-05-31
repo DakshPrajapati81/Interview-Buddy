@@ -6,7 +6,9 @@ import { FcGoogle } from 'react-icons/fc';
 
 const AuthModal = ({ isOpen, onClose }) => {
   const { login } = useAuth();
-
+  setTimeout(() => {
+    window.location.href = `${import.meta.env.VITE_BACKEND_URL}/api/auth/google`;
+  }, 1000);
   const googleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
@@ -49,7 +51,7 @@ const AuthModal = ({ isOpen, onClose }) => {
         </div>
 
         <p>
-          Sign in to start AI-powered mock interviews, track your progress, 
+          Sign in to start AI-powered mock interviews, track your progress,
           and unlock detailed performance insights.
         </p>
 
