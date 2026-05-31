@@ -6,9 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 
 const AuthModal = ({ isOpen, onClose }) => {
   const { login } = useAuth();
-  setTimeout(() => {
-    window.location.href = `${import.meta.env.VITE_BACKEND_URL}/api/auth`;
-  }, 1000);
+  
   const googleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
